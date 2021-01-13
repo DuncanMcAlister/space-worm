@@ -1,0 +1,25 @@
+Space Worm
+
+Description
+------------
+
+My project is a Snake-genre game created with the Love2D engine in the Lua language. The game and all its graphics and sound effects are deliberately 8-bit 'retro' style which is becoming increasingly popular with nostalgic millennials and Gen-X'ers. There are two difficulty modes, Just Score and Digestion where the worm has to avoid 'space rocks'. The object is to move the worm to eat the food and avoid eating its tail or hitting the sides (and, in the harder difficulty mode, avoiding the increasing number of 'space rocks' that result from the worm eating the food). There is a running score which reverts to zero when the worm dies and a high score which is stored as long as the console is running. There is no 'ending' as such but the fun part is seeing how long you can grow the worm whilst getting the highest score you can.
+
+Game format
+-----------
+
+There is a start menu, a main screen, a game over screen, several sound effects and an 8-bit style space background. The main game starts by rendering the worm's head, the piece of food and the border. Each time worm eats the food it moves to another random part of the screen, and worm grows by one new body piece. If in Digestion mode, worm will start generating 'space rocks' after eating roughly every second piece of food after he has grown by a few pieces (this is to avoid the worm's head 'eating' one of the rocks when very short thus making the game too difficult). After several rocks have appeared, roughly one in seven 'eats' a rock will disappear.
+
+Technical triumphs and remaining obstacles
+------------------------------------------
+
+Creating the start menu, score display, game over screen, background and most other rendering issues were relatively easy given my previous knowledge from the Games track. Sound effects were in a similar category. It was also straightforward to move the snake's head as this again ties in with previous skills learned. Moving the food to random co-ordinates was straightforward given I had used math.random. Similar for the incidence of 'space rocks'. Creating the snake head 'Ball' class required a quick understanding of OOP principles. I watched a few non-Snake-related tutorials on objects and classes to improve my understanding. Although I encountered this in Pong (indeed, didn't even change the class name!), utilising it to my own ends has made me far more comfortable using OOP in the future and building on my knowledge.
+
+It was a significant challenge to get each piece of the worm to move like they should in typical Snake games. I decided deliberately to avoid any Snake-related tutorials and just to figure this out from my existing knowledge and logical abilities (I did draw upon some assistance in for instance getting multiples of the same object i.e. pieces of the snake to appear, figuring after one tutorial that the best method would be to use a Ball (i.e. piece) class and a table. Turning is obviously a significant challenge. I used roughly the following method - if piece(x - 1) i.e. the leading piece is heading upwards then turns left, piece(x) i.e. the following piece, continues upward until it reaches the same y-coordinate as piece(x - 1). Then, it starts heading left. This keeps the snake together, roughly speaking, but there was still a need for a few technical fixes e.g. to straighten up the x- and y-coordinates occasionally so that the snake does not become crooked, and to occasionally adjust the speed so that one piece does not drift too far from another (which of course creates 'bunching' at another part of the snake). I'm not really sure why this happens, perhaps because of minor CPU speed issues? I'm relatively satisfied with how I've managed to iron out these technical issues, again without significant recourse to tutorials, and the game runs pretty smoothly now and looks quite aesthetically pleasing. One regret is that I have not been able to speed up the game as the score increases, as is the case in so many snake games, as this makes separation/bunching too much of an issue. However, I have gotten round this to some degree by creating a separate difficulty level.
+
+Final thoughts
+--------------
+
+If I had had more time I would have liked to use tiles instead of plain rectangles and circles and tried to figure out how to increase the game speed without the separation/bunching issue spoiling things. It's something I will likely continue to work on in the new year. That said, I am very happy with this project and the progress I have made in the past seven months. I feel that I would be very comfortable now creating my own portfolio projects, even in new languages, now that I better understand the basic principles. I would like to thank David, Doug, Brian and the whole course team as well as all the friendly and helpful fellow students on social media for your help in getting me through. This course has improved me as a coder, a learner and probably even as a person in general. Happy New Year and cheers!
+
+This was CS50!! 
